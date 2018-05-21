@@ -28,13 +28,14 @@ class Tweet extends Component {
 
   render() {
     const { tweet } = this.props;
+    
+    if (!tweet) {
+      return <p>This tweet doesn't exist</p>;
+    }
     const {
       name, avatar, timestamp, text, hasLiked, likes, replies, id, parent,
     } = tweet;
 
-    if (!tweet) {
-      return <p>This tweet doesn\'t exist</p>;
-    }
 
     return (
       <div className='tweet'>
